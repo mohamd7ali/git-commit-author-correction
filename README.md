@@ -37,12 +37,21 @@ Save and exit the editor.
 ## Step 3 – Amend Each Commit
 
 For each commit marked `edit`, Git will pause and let you change it.
-Run:
+Git will stop at that commit. Run:
 ```bash
 git commit --amend --author="Mohammad Ali Etemadi <your.email@example.com>" --no-edit
+```
+- Replace `your.email@example.com` with the email that is registered in your GitHub account (for example for me it is mohamd7ali).
+
+Then continue the rebase:
+```bash
 git rebase --continue
 ```
 
-Replace `your.email@example.com` with the email that is registered in your GitHub account (for example for me it is mohamd7ali).
+Git will move to the next commit you marked as edit.
+- Repeat the --amend + --continue cycle until all are done.
+
+  
+
 
 
