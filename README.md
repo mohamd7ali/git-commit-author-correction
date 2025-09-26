@@ -51,7 +51,17 @@ git rebase --continue
 Git will move to the next commit you marked as edit.
 - Repeat the --amend + --continue cycle until all are done.
 
-  
+## Step 4 – Push the Rewritten History
+When finished, you’ve rewritten the last 10 commits.
+Finally, push your branch to GitHub with:
+```bash
+git push origin feature/moham... --force-with-lease
+```
+- `--force-with-lease` is safer than `--force` because it prevents overwriting if someone else pushed new commits in the meantime.
 
+Now all the commits should show your correct name and email (Mohammad Ali Etemadi <your.email@example.com>), and GitHub will attribute them to your account.
+
+# Author
+Mohammad Ali Etemadi Naeen
 
 
