@@ -6,3 +6,30 @@ If some of your commits were made with the wrong Git user (e.g., `anonymous_user
 Make a backup branch first:
 ```bash
 git branch backup-my-branch
+```
+
+## Step 1 – Start Interactive Rebase
+
+Run:
+```bash
+git rebase -i HEAD~10
+```
+This will open the last 10 commits in an editor.
+
+## Step 2 – Mark Commits to Edit
+In the editor, change `pick` → `edit` for the commits with the wrong author.
+Example:
+```text
+edit 1f63846 modify the gitignore file
+edit 408cdb9 Add DMD & AFIS Codes for SD302 Dataset
+edit 6014797 Add Evaluation Codes for Police Dataset
+edit 0086e66 Add Codes of Combination Scores
+edit 53e1bf6 Add Python Script to Check the Combined Scores that are Monotonic or Not
+edit dc0e44f Add combination_scripts Folder
+edit fb659ca Add Normalization Script
+edit c932202 rename the normalization.py to 02_normalization.py
+edit f985d85 Add Average Combination Method Script
+pick 9d66b49 Max Combination Script   # already correct, leave as pick
+```
+Save and exit the editor.
+
