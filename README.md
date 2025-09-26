@@ -17,6 +17,7 @@ git rebase -i HEAD~10
 This will open the last 10 commits in an editor.
 
 ## Step 2 – Mark Commits to Edit
+
 In the editor, change `pick` → `edit` for the commits with the wrong author.
 Example:
 ```text
@@ -32,4 +33,16 @@ edit f985d85 Add Average Combination Method Script
 pick 9d66b49 Max Combination Script   # already correct, leave as pick
 ```
 Save and exit the editor.
+
+## Step 3 – Amend Each Commit
+
+For each commit marked `edit`, Git will pause and let you change it.
+Run:
+```bash
+git commit --amend --author="Mohammad Ali Etemadi <your.email@example.com>" --no-edit
+git rebase --continue
+```
+
+Replace `your.email@example.com` with the email that is registered in your GitHub account (for example for me it is mohamd7ali).
+
 
